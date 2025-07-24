@@ -1,6 +1,7 @@
 import NavigationButton from '@/app/[locale]/components/course/CourseHero/NavigationButton'
 import PlayButton from '@/app/[locale]/components/course/CourseHero/PlayButton'
 import { Media } from '@/app/types'
+import Image from 'next/image'
 import { Dispatch, SetStateAction } from 'react'
 
 const MediaPlayer = ({
@@ -19,7 +20,6 @@ const MediaPlayer = ({
   setIsVideoPlaying: Dispatch<SetStateAction<boolean>>
 }) => {
   const currentMedia = previewMediaItems[activeMediaIndex]
-  console.log('🚀 ~ MediaPlayer ~ currentMedia:', currentMedia)
   const nextMedia = () => {
     setActiveMediaIndex((prev) => (prev + 1) % previewMediaItems.length)
     setIsVideoPlaying(false) // Reset video when changing media
@@ -63,7 +63,7 @@ const MediaPlayer = ({
             <div className="thumb-wrap">
               <div>
                 <div className="transition-opacity duration-300 ease-in-out text-[0px] object-cover">
-                  <img alt="image" src={currentMedia.thumbnail_url || currentMedia.resource_value} width="1000" height="1000" className="w-full h-full object-cover" />
+                  <Image alt="image" src={currentMedia.thumbnail_url || currentMedia.resource_value} width="1000" height="1000" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>

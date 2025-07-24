@@ -1,4 +1,5 @@
 import { MessageCircle, Phone } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -11,7 +12,7 @@ const Footer = () => {
           <div className="flex flex-col items-center w-full mb-7 md:mb-0 md:items-start mx-lg:mb-7 mx-lg:mr-6">
             <Link className="mb-4" href="/">
               <div className="rounded-md opacity-1 transition-opacity duration-300 ease-in-out">
-                <img alt="Instructor" src="https://10minuteschool.com/images/logo.svg" width="116" height="32" className="w-auto h-8" />
+                <Image alt="Instructor" src="https://10minuteschool.com/images/logo.svg" width="116" height="32" className="w-auto h-8" />
               </div>
             </Link>
 
@@ -20,12 +21,12 @@ const Footer = () => {
             <div className="flex">
               <div className="mr-4">
                 <Link href="https://play.google.com/store/apps/details?id=com.a10minuteschool.tenminuteschool">
-                  <img alt="google play" src="https://cdn.10minuteschool.com/images/google-play-icon_1695731678094.png" width="156" height="49" className="w-39 h-auto" />
+                  <Image alt="google play" src="https://cdn.10minuteschool.com/images/google-play-icon_1695731678094.png" width="156" height="49" className="w-39 h-auto" />
                 </Link>
               </div>
               <div>
                 <Link href="https://apps.apple.com/us/app/10-minute-school/id1577061772">
-                  <img alt="ios download" src="https://cdn.10minuteschool.com/images/ios-store-icon_1695731704002.png" width="156" height="49" className="w-39 h-auto" />
+                  <Image alt="ios download" src="https://cdn.10minuteschool.com/images/ios-store-icon_1695731704002.png" width="156" height="49" className="w-39 h-auto" />
                 </Link>
               </div>
             </div>
@@ -153,27 +154,27 @@ const Footer = () => {
             <div className="mx-auto mb-3 mt-5 flex w-full max-w-[256px] gap-6 md:mx-0">
               <div>
                 <a href="https://www.facebook.com/10minuteschool/" target="_blank" rel="noreferrer">
-                  <img alt="facebook" src="https://cdn.10minuteschool.com/images/facebook_1695730910971.png" width="32" height="32" className="w-8 h-8" />
+                  <Image alt="facebook" src="https://cdn.10minuteschool.com/images/facebook_1695730910971.png" width="32" height="32" className="w-8 h-8" />
                 </a>
               </div>
               <div>
                 <a href="https://www.instagram.com/10ms_insta/" target="_blank" rel="noreferrer">
-                  <img alt="instagram" src="https://cdn.10minuteschool.com/images/instagram_1695731442397.png" width="32" height="32" className="w-8 h-8" />
+                  <Image alt="instagram" src="https://cdn.10minuteschool.com/images/instagram_1695731442397.png" width="32" height="32" className="w-8 h-8" />
                 </a>
               </div>
               <div>
                 <a href="https://www.linkedin.com/company/10ms/" target="_blank" rel="noreferrer">
-                  <img alt="linkedin" src="https://cdn.10minuteschool.com/images/linkedin_1695731507042.png" width="32" height="32" className="w-8 h-8" />
+                  <Image alt="linkedin" src="https://cdn.10minuteschool.com/images/linkedin_1695731507042.png" width="32" height="32" className="w-8 h-8" />
                 </a>
               </div>
               <div>
                 <a href="https://www.youtube.com/channel/UCL89KKkLs0tZKld-iIS3NGw" target="_blank" rel="noreferrer">
-                  <img alt="youtube" src="https://cdn.10minuteschool.com/images/youtube_1695731538726.png" width="32" height="32" className="w-8 h-8" />
+                  <Image alt="youtube" src="https://cdn.10minuteschool.com/images/youtube_1695731538726.png" width="32" height="32" className="w-8 h-8" />
                 </a>
               </div>
               <div>
                 <a href="https://www.tiktok.com/@10minuteschool?lang=en" target="_blank" rel="noreferrer">
-                  <img alt="Tiktok" src="https://cdn.10minuteschool.com/images/Tiktok_1695731564895.png" width="32" height="32" className="w-8 h-8" />
+                  <Image alt="Tiktok" src="https://cdn.10minuteschool.com/images/Tiktok_1695731564895.png" width="32" height="32" className="w-8 h-8" />
                 </a>
               </div>
             </div>

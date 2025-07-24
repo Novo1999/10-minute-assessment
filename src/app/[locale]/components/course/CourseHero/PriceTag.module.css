@@ -1,0 +1,63 @@
+.cardPrice {
+  display: inline-block;
+  width: auto;
+  height: 2rem;
+  /* 38px converted to rem */
+
+  background-color: rgb(249, 123, 83);
+  -webkit-border-radius: 0.1875rem 0.25rem 0.25rem 0.1875rem;
+  /* 3px 4px 4px 3px */
+  -moz-border-radius: 0.1875rem 0.25rem 0.25rem 0.1875rem;
+  border-radius: 0.1875rem 0.25rem 0.25rem 0.1875rem;
+
+  border-left: 0.0625rem solid rgb(249, 123, 83);
+  /* 1px */
+  /* This makes room for the triangle */
+  margin-left: 1.1875rem;
+  /* 19px */
+
+  position: relative;
+
+  color: white;
+  font-weight: 300;
+  font-size: 0.8rem;
+  /* 22px */
+  line-height: 2rem;
+  /* 38px */
+  padding: 0 0.625rem 0 0.225rem;
+  /* 0 10px 0 10px */
+}
+
+/* Makes the triangle */
+.cardPrice::before {
+  content: "";
+  position: absolute;
+  display: block;
+  left: -1.1875rem;
+  /* -19px */
+  width: 0;
+  height: 0;
+  border-top: 1.1rem solid transparent;
+  /* 19px */
+  border-bottom: 0.9rem solid transparent;
+  /* 19px */
+  border-right: 1.1875rem solid rgb(249, 123, 83);
+  /* 19px */
+}
+
+/* Makes the circle */
+.cardPrice::after {
+  content: "";
+  background-color: white;
+  border-radius: 50%;
+  width: 0.25rem;
+  /* 4px */
+  height: 0.25rem;
+  /* 4px */
+  display: block;
+  position: absolute;
+  left: -0.5625rem;
+  /* -9px */
+  top: 1rem;
+  /* 17px */
+}
