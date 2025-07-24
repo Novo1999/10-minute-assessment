@@ -1,8 +1,9 @@
 import { API_BASE } from '@/app/constants/url'
+import { CourseResponse } from '@/app/types'
 import { Locale } from '@/i18n/i18n-config'
 
 export default class CourseApiService {
-  static getCourse = async (slug: string, lang: Locale) => {
+  static getCourse = async (slug: string, lang: Locale): Promise<CourseResponse> => {
     try {
       const res = await fetch(`${API_BASE}/discovery-service/api/v1/products/${slug}?lang=${lang}`)
       if (!res.ok) throw new Error('Failed to get course data')

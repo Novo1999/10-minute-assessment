@@ -1,8 +1,10 @@
+import { ApiResponse } from '@/app/types/api-response'
 import { ChecklistItem } from '@/app/types/checklist'
 import { CtaText } from '@/app/types/cta-text'
 import { Media } from '@/app/types/media'
 import { Section } from '@/app/types/section'
 
+// Old Info
 export interface OldInfo {
   cat_id: number
   course_id: number
@@ -11,6 +13,7 @@ export interface OldInfo {
   slug: string
 }
 
+// Main Course Data Interface
 export interface CourseData {
   slug: string
   id: number
@@ -30,11 +33,6 @@ export interface CourseData {
   secondary_cta_group: unknown[]
   delivery_method: string
 }
-export interface CourseResponse {
-  code: number
-  data: CourseData
-  error: unknown[]
-  message: string
-  payload: unknown[]
-  status_code: number
-}
+
+// API Response Structure for Course
+export type CourseResponse = ApiResponse<CourseData>

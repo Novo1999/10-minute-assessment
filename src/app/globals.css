@@ -125,8 +125,10 @@
     @apply cursor-pointer;
   }
 
-  /* now its easier to calculate in rem (e.g: 1rem = 10px) */
-  html {
-    @apply text-[62.5%];
-  }
+
+}
+
+@utility container {
+  max-width: 120rem;
+  padding-inline: 0.6rem;
 }
