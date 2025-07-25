@@ -1,3 +1,5 @@
+import CourseDetails from '@/app/[locale]/components/course/CourseDetails'
+import CourseExclusiveFeatures from '@/app/[locale]/components/course/CourseExclusiveFeature'
 import CourseHero from '@/app/[locale]/components/course/CourseHero/CourseHero'
 import CourseInstructor from '@/app/[locale]/components/course/CourseInstructor'
 import CourseLaidOut from '@/app/[locale]/components/course/CourseLaidOut'
@@ -14,12 +16,14 @@ export default async function CoursePage({ params }: PageProps) {
   return (
     <div className="min-h-[90vh]">
       <CourseHero courseData={data} />
-      <div className="flex sm:gap-24 xl:gap-[10rem]">
-        <div className="flex flex-col w-full sm:w-1/2 lg:w-3/5 xl:w-4/5">
+      <div className="flex sm:gap-24">
+        <div className="flex flex-col w-full sm:w-1/2 lg:w-3/5 xl:w-[70%] 2xl:w-[78%]">
           <SectionsNav courseData={data} />
           <CourseInstructor courseData={data} />
           <CourseLaidOut courseData={data} />
           <WhatYouWillLearn courseData={data} />
+          <CourseExclusiveFeatures courseData={data} />
+          <CourseDetails courseData={data} />
         </div>
         <div className="sm:w-1/3 lg:w-1/5 xl:w-1/6"></div>
       </div>

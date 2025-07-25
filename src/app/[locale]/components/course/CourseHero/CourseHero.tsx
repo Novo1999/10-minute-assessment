@@ -1,4 +1,6 @@
 'use client'
+import CourseEnroll from '@/app/[locale]/components/course/CourseHero/CourseEnroll'
+import CourseFeatures from '@/app/[locale]/components/course/CourseHero/CourseFeatures'
 import CoursePrice from '@/app/[locale]/components/course/CourseHero/CoursePrice'
 import MediaPlayer from '@/app/[locale]/components/course/CourseHero/MediaPlayer'
 import ThumbnailGallery from '@/app/[locale]/components/course/CourseHero/ThumbnailGallery'
@@ -95,26 +97,10 @@ const CourseHero: React.FC<CourseHeroProps> = ({ courseData }) => {
                 <div className="hidden md:block"></div>
 
                 {/* Course Features - Now visible on mobile */}
-                <div className="hidden md:block">
+                <div className="hidden sm:block">
                   <div className="grid py-2 md:p-4">
-                    <CoursePrice className="hidden sm:block" />
-                    <button className="bg-primary hidden sm:block whitespace-nowrap button text-white text-center md:w-full text-sm rounded-lg shadow-black shadow px-4 py-1.5 mb-6">
-                      {courseData?.cta_text?.name}
-                    </button>
-                    <p className="mb-4 text-xl font-semibold">এই কোর্সে যা থাকছে</p>
-
-                    <div>
-                      {courseData.checklist.map((feature) => (
-                        <div key={feature.id}>
-                          <div className="flex items-center mb-3 leading-5">
-                            <div className="inline-block h-[1.25rem] w-[1.25rem] transition-opacity duration-300 ease-in-out text-[0px]">
-                              <Image alt="icon" src={feature.icon} width={50} height={50} className="transparent" />
-                            </div>
-                            <h4 className="mb-0 inline-block pl-4 tracking-[0.005em] text-[#111827]">{feature.text}</h4>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
+                    <CourseEnroll className="hidden sm:block" courseData={courseData} />
+                    <CourseFeatures courseData={courseData} />
                   </div>
                 </div>
 
@@ -133,25 +119,9 @@ const CourseHero: React.FC<CourseHeroProps> = ({ courseData }) => {
       </div>
       <div className="grid py-2 p-4 sm:hidden">
         <div className="flex flex-col w-full">
-          <CoursePrice className="sm:hidden" />
-          <button className="bg-primary sm:hidden whitespace-nowrap button text-white text-center md:w-full text-sm rounded-lg shadow-black shadow px-4 py-1.5 mb-6">
-            {courseData?.cta_text?.name}
-          </button>
+          <CourseEnroll className="sm:hidden" courseData={courseData} />
         </div>
-        <p className="mb-4 text-xl font-semibold">এই কোর্সে যা থাকছে</p>
-
-        <div>
-          {courseData.checklist.map((feature) => (
-            <div key={feature.id}>
-              <div className="flex items-center mb-3 leading-5">
-                <div className="inline-block h-[1.25rem] w-[1.25rem] transition-opacity duration-300 ease-in-out text-[0px]">
-                  <Image alt="icon" src={feature.icon} width={50} height={50} className="transparent" />
-                </div>
-                <h4 className="mb-0 inline-block pl-4 tracking-[0.005em] text-[#111827]">{feature.text}</h4>
-              </div>
-            </div>
-          ))}
-        </div>
+        <CourseFeatures className="sm:hidden" courseData={courseData} />
       </div>
     </>
   )

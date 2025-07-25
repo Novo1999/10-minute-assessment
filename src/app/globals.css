@@ -137,11 +137,11 @@
 
 @utility container {
   max-width: 120rem;
-  padding-inline: 0.6rem;
+  padding-inline: 0.8rem;
 
   @variant xl {
     max-width: 180rem;
-    padding-inline: 20rem;
+    padding-inline: 10rem;
   }
 
   @variant 2xl {

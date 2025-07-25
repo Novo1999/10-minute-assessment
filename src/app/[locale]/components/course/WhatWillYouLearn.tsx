@@ -7,6 +7,7 @@ interface WhatYouWillLearnProps {
 }
 
 const WhatYouWillLearn: React.FC<WhatYouWillLearnProps> = ({ courseData }) => {
+  console.log("🚀 ~ WhatYouWillLearn ~ courseData:", courseData)
   const pointersSection = courseData?.sections?.find((sec) => sec?.type === 'pointers')
   const pointers = pointersSection?.values as Pointer[]
 
