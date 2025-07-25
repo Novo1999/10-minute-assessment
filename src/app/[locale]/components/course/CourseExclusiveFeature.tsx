@@ -11,7 +11,7 @@ const CourseExclusiveFeatures = ({ courseData }: { courseData: CourseData }) => 
   }
 
   return (
-    <div className="flex flex-col gap-3 mb-10 container">
+    <div id="feature_explanations" className="flex flex-col gap-3 mb-10 container">
       <h2 className="text-xl font-semibold leading-[30px] text-black">{exclusiveFeaturesSection?.name || 'Course Exclusive Feature'}</h2>
       <div className="grid grid-cols-1 px-5 border divide-y rounded-md">
         {exclusiveFeatures.map((feature) => (

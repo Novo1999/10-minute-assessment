@@ -133,6 +133,9 @@
 
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 
 @utility container {

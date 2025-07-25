@@ -10,7 +10,7 @@ const CourseDetails = ({ courseData }: { courseData: CourseData }) => {
   }
 
   return (
-    <div className="mb-10 pb-16 container">
+    <div id='about' className="mb-10 pb-16 container">
       <h2 className="mb-6 text-xl font-semibold md:text-2xl">{aboutSection?.name}</h2>
 
       <Accordion type="single" collapsible className="w-full">

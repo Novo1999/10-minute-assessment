@@ -16,7 +16,7 @@ const CourseInstructor: React.FC<CourseInstructorProps> = ({ courseData }) => {
   }
 
   return (
-    <div className="pt-4 pb-2 bg-white">
+    <div id="instructors" className="pt-4 pb-2 bg-white">
       <div className="container">
         <h2 className="mb-4 text-xl font-semibold md:text-2xl">{instructorsSection?.name}</h2>
 

@@ -1,6 +1,7 @@
 'use client'
 import { CourseData } from '@/app/types'
 import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
+import Link from 'next/link'
 import React, { useState } from 'react'
 
 interface SectionsNavProps {
@@ -42,8 +43,9 @@ const SectionsNav: React.FC<SectionsNavProps> = ({ courseData, onSectionSelect }
         >
           <CarouselContent className="ml-6">
             {displayableSections.map((section, index) => (
-              <CarouselItem key={section.type} className="pl-2 basis-auto">
-                <button
+              <CarouselItem key={section.type} className="pl-2 py-2 basis-auto">
+                <Link
+                  href={`#${section.type}`}
                   onClick={() => handleSectionClick(index, section.type)}
                   className={`
                     relative flex-shrink-0 px-4 py-3 text-sm font-medium whitespace-nowrap
@@ -55,7 +57,7 @@ const SectionsNav: React.FC<SectionsNavProps> = ({ courseData, onSectionSelect }
 
                   {/* Active underline */}
                   {activeSection === index && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary transform origin-center animate-in slide-in-from-bottom-1 duration-200" />}
-                </button>
+                </Link>
               </CarouselItem>
             ))}
           </CarouselContent>

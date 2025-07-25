@@ -15,7 +15,7 @@ const CourseLaidOut: React.FC<CourseLayoutProps> = ({ courseData }) => {
   }
 
   return (
-    <div className="bg-white py-8">
+    <div id="features" className="bg-white py-8">
       <div className="container">
         <h2 className="mb-8 text-2xl font-semibold text-gray-900 md:text-3xl">{featuresSection?.name}</h2>
 
