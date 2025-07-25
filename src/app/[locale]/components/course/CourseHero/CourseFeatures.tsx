@@ -60,7 +60,7 @@ const CourseFeatures = ({ courseData, className }: { courseData: CourseData; cla
           <div
             className={`${className} ${
               isOutOfView ? 'opacity-100' : 'opacity-0 pointer-events-none'
-            } transition-opacity duration-300 ease-in-out hidden sm:block fixed border p-4 top-20 w-full md:max-w-[20.625rem] lg:max-w-[25rem] sm:right-6 lg:right-2 xl:right-40 2xl:right-[20rem] z-[9999] bg-white`}
+            } transition-opacity duration-300 ease-in-out hidden sm:block fixed border p-4 top-20 w-full md:max-w-[20.625rem] lg:max-w-[25rem] sm:right-6 lg:right-2 xl:right-40 2xl:right-[20rem]  bg-white`}
           >
             <CourseEnroll courseData={courseData} className="hidden lg:block" />
             <p className="mb-4 text-xl font-semibold">এই কোর্সে যা থাকছে</p>

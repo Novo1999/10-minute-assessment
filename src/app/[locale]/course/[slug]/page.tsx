@@ -96,6 +96,8 @@ export default async function CoursePage({ params }: PageProps) {
                   return <CourseExclusiveFeatures key={section.type} sectionData={section} />
                 case COURSE_DETAILS:
                   return <CourseDetails key={section.type} sectionData={section} />
+                default:
+                  return null
               }
             })}
           </div>
