@@ -27,6 +27,20 @@ export async function generateStaticParams() {
   )
 }
 
+export async function generateMetadata({ params }: PageProps) {
+  const { slug, locale } = await params
+  const { data } = await CourseApiService.getCourse(slug, locale)
+
+  return {
+    title: data?.title + ' - 10 minute school',
+
+    openGraph: {
+      url: `/courses/${data?.slug}`,
+      images: [data?.media?.[0]?.thumbnail_url],
+    },
+  }
+}
+
 export default async function CoursePage({ params }: PageProps) {
   const { locale, slug } = await params
   const { data } = await CourseApiService.getCourse(slug, locale)
