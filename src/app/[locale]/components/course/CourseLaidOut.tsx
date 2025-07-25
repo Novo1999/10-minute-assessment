@@ -1,14 +1,13 @@
-import { CourseData, Feature } from '@/app/types'
+import { Feature, Section } from '@/app/types'
 import Image from 'next/image'
 import React from 'react'
 
-interface CourseLayoutProps {
-  courseData: CourseData
+interface CourseLaidOutProps {
+  sectionData: Section
 }
 
-const CourseLaidOut: React.FC<CourseLayoutProps> = ({ courseData }) => {
-  const featuresSection = courseData?.sections?.find((sec) => sec?.type === 'features')
-  const features = featuresSection?.values as Feature[]
+const CourseLaidOut: React.FC<CourseLaidOutProps> = ({ sectionData }) => {
+  const features = sectionData?.values as Feature[]
 
   if (!features || features.length === 0) {
     return null
@@ -17,7 +16,7 @@ const CourseLaidOut: React.FC<CourseLayoutProps> = ({ courseData }) => {
   return (
     <div id="features" className="bg-white py-8">
       <div className="container">
-        <h2 className="mb-8 text-2xl font-semibold text-gray-900 md:text-3xl">{featuresSection?.name}</h2>
+        <h2 className="mb-8 text-2xl font-semibold text-gray-900 md:text-3xl">{sectionData?.name}</h2>
 
         <div className="mb-16 grid grid-cols-1 gap-4 rounded-md border bg-[#111827] p-6 md:grid-cols-2 md:gap-8">
           {features.map((feature) => (

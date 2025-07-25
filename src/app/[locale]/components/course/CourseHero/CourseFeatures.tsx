@@ -44,7 +44,7 @@ const CourseFeatures = ({ courseData, className }: { courseData: CourseData; cla
           {courseData.checklist.map((feature) => (
             <div key={feature.id}>
               <div className="flex items-center mb-3 leading-5">
-                <div className="inline-block h-[1.25rem] w-[1.25rem] transition-opacity duration-300 ease-in-out text-[0px]">
+                <div className="inline-block h-[1.25rem] w-[1.25rem] transition-opacity duration-300 ease-in-out">
                   <Image alt="icon" src={feature.icon} width={50} height={50} className="transparent" />
                 </div>
                 <h4 className="mb-0 inline-block pl-4 tracking-[0.005em] text-[#111827]">{feature.text}</h4>
@@ -68,7 +68,7 @@ const CourseFeatures = ({ courseData, className }: { courseData: CourseData; cla
               {courseData.checklist.map((feature) => (
                 <div key={feature.id}>
                   <div className="flex items-center mb-3 leading-5">
-                    <div className="inline-block h-[1.25rem] w-[1.25rem] transition-opacity duration-300 ease-in-out text-[0px]">
+                    <div className="inline-block h-[1.25rem] w-[1.25rem] transition-opacity duration-300 ease-in-out">
                       <Image alt="icon" src={feature.icon} width={50} height={50} className="transparent" />
                     </div>
                     <h4 className="mb-0 inline-block pl-4 tracking-[0.005em] text-[#111827]">{feature.text}</h4>

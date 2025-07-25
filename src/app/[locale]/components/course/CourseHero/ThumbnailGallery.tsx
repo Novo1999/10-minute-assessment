@@ -25,12 +25,12 @@ const ThumbnailGallery = ({
                 setIsVideoPlaying(false)
               }}
             >
-              <div className="rounded transition-opacity duration-300 ease-in-out text-[0px]">
+              <div className="rounded transition-opacity duration-300 ease-in-out">
                 <Image alt="preview_gallery" src={item.thumbnail_url || item.resource_value} width="500" height="500" className="w-full object-cover rounded" />
               </div>
               {item.resource_type === 'video' && (
                 <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-                  <div className="transition-opacity duration-300 ease-in-out text-[0px]">
+                  <div className="transition-opacity duration-300 ease-in-out">
                     <Image alt="Play The Video" src="https://10minuteschool.com/images/annual_exam/play_icon_2.svg" width="20" height="20" className="transparent" />
                   </div>
                 </div>

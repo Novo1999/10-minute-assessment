@@ -62,7 +62,7 @@ const MediaPlayer = ({
             {currentMedia?.resource_type !== 'image' && <PlayButton handlePlayClick={handlePlayClick} />}
             <div className="thumb-wrap">
               <div>
-                <div className="transition-opacity duration-300 ease-in-out text-[0px] object-cover">
+                <div className="transition-opacity duration-300 ease-in-out object-cover">
                   <Image alt="image" src={currentMedia.thumbnail_url || currentMedia.resource_value} width="1000" height="1000" className="w-full h-full object-cover" />
                 </div>
               </div>

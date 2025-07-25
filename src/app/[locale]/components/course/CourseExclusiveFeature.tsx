@@ -1,10 +1,13 @@
-import { CourseData, FeatureExplanation } from '@/app/types'
+import { FeatureExplanation, Section } from '@/app/types'
 import { Check } from 'lucide-react'
 import Image from 'next/image'
 
-const CourseExclusiveFeatures = ({ courseData }: { courseData: CourseData }) => {
-  const exclusiveFeaturesSection = courseData?.sections?.find((sec) => sec?.type === 'feature_explanations')
-  const exclusiveFeatures = exclusiveFeaturesSection?.values as FeatureExplanation[]
+interface CourseExclusiveFeatureProps {
+  sectionData: Section
+}
+
+const CourseExclusiveFeatures = ({ sectionData }: CourseExclusiveFeatureProps) => {
+  const exclusiveFeatures = sectionData?.values as FeatureExplanation[]
 
   if (!exclusiveFeatures || exclusiveFeatures.length === 0) {
     return null
@@ -12,7 +15,7 @@ const CourseExclusiveFeatures = ({ courseData }: { courseData: CourseData }) => 
 
   return (
     <div id="feature_explanations" className="flex flex-col gap-3 mb-10 container">
-      <h2 className="text-xl font-semibold leading-[30px] text-black">{exclusiveFeaturesSection?.name || 'Course Exclusive Feature'}</h2>
+      <h2 className="text-xl font-semibold leading-[30px] text-black">{sectionData?.name || 'Course Exclusive Feature'}</h2>
       <div className="grid grid-cols-1 px-5 border divide-y rounded-md">
         {exclusiveFeatures.map((feature) => (
           <div key={feature.id} className="flex flex-col items-start justify-between gap-3 py-5 md:flex-row">

@@ -1,0 +1,7 @@
+const COURSE_INSTRUCTOR = 'instructors'
+const COURSE_LAYOUT = 'features'
+const COURSE_LEARNING = 'pointers'
+const COURSE_EXCLUSIVE_FEATURES = 'feature_explanations'
+const COURSE_DETAILS = 'about'
+
+export { COURSE_DETAILS, COURSE_EXCLUSIVE_FEATURES, COURSE_INSTRUCTOR, COURSE_LAYOUT, COURSE_LEARNING }

@@ -6,6 +6,7 @@ import CourseLaidOut from '@/app/[locale]/components/course/CourseLaidOut'
 import WhatYouWillLearn from '@/app/[locale]/components/course/WhatWillYouLearn'
 import SectionsNav from '@/app/[locale]/components/shared/SectionsNav'
 import CourseApiService from '@/app/ApiService/CourseApiService'
+import { COURSE_DETAILS, COURSE_EXCLUSIVE_FEATURES, COURSE_INSTRUCTOR, COURSE_LAYOUT, COURSE_LEARNING } from '@/app/constants/sections'
 import { IELTS_COURSE } from '@/app/constants/slugs'
 import { PageProps } from '@/app/types/page-props'
 import { i18n } from '@/i18n/i18n-config'
@@ -81,15 +82,24 @@ export default async function CoursePage({ params }: PageProps) {
       <div className="min-h-[90vh]">
         <CourseHero courseData={data} />
         <div className="flex sm:gap-24">
-          <div className="flex flex-col w-full sm:w-2/3 lg:w-4/5 xl:w-[70%] 2xl:w-[78%]">
+          <div className="flex flex-col w-full sm:w-[54%] lg:w-[58%] xl:w-[70%] 2xl:w-[78%]">
             <SectionsNav courseData={data} />
-            <CourseInstructor courseData={data} />
-            <CourseLaidOut courseData={data} />
-            <WhatYouWillLearn courseData={data} />
-            <CourseExclusiveFeatures courseData={data} />
-            <CourseDetails courseData={data} />
+            {data?.sections?.map((section) => {
+              switch (section?.type) {
+                case COURSE_INSTRUCTOR:
+                  return <CourseInstructor key={section.type} sectionData={section} />
+                case COURSE_LAYOUT:
+                  return <CourseLaidOut key={section.type} sectionData={section} />
+                case COURSE_LEARNING:
+                  return <WhatYouWillLearn key={section.type} sectionData={section} />
+                case COURSE_EXCLUSIVE_FEATURES:
+                  return <CourseExclusiveFeatures key={section.type} sectionData={section} />
+                case COURSE_DETAILS:
+                  return <CourseDetails key={section.type} sectionData={section} />
+              }
+            })}
           </div>
-          <div className="hidden sm:block sm:w-1/3 lg:w-1/5 xl:w-[30%] 2xl:w-[22%]">{/* Sidebar content can go here */}</div>
+          <div className="hidden sm:block sm:w-2/5 lg:w-1/5 xl:w-[30%] 2xl:w-[22%]"></div>
         </div>
       </div>
     </>

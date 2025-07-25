@@ -1,15 +1,14 @@
-import { CourseData, Instructor } from '@/app/types'
+import { Instructor, Section } from '@/app/types'
 import { ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
 
 interface CourseInstructorProps {
-  courseData: CourseData
+  sectionData: Section
 }
 
-const CourseInstructor: React.FC<CourseInstructorProps> = ({ courseData }) => {
-  const instructorsSection = courseData?.sections?.find((sec) => sec?.type === 'instructors')
-  const instructors = instructorsSection?.values as Instructor[]
+const CourseInstructor: React.FC<CourseInstructorProps> = ({ sectionData }) => {
+  const instructors = sectionData?.values as Instructor[]
 
   if (!instructors || instructors.length === 0) {
     return null
@@ -18,7 +17,7 @@ const CourseInstructor: React.FC<CourseInstructorProps> = ({ courseData }) => {
   return (
     <div id="instructors" className="pt-4 pb-2 bg-white">
       <div className="container">
-        <h2 className="mb-4 text-xl font-semibold md:text-2xl">{instructorsSection?.name}</h2>
+        <h2 className="mb-4 text-xl font-semibold md:text-2xl">{sectionData?.name}</h2>
 
         {instructors.map((instructor: Instructor) => (
           <div key={instructor?.slug} className="flex items-center md:rounded-md md:border md:p-5">

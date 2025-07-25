@@ -1,14 +1,13 @@
-import { CourseData, Pointer } from '@/app/types'
+import { Pointer, Section } from '@/app/types'
 import { Check } from 'lucide-react'
 import React from 'react'
 
 interface WhatYouWillLearnProps {
-  courseData: CourseData
+  sectionData: Section
 }
 
-const WhatYouWillLearn: React.FC<WhatYouWillLearnProps> = ({ courseData }) => {
-  const pointersSection = courseData?.sections?.find((sec) => sec?.type === 'pointers')
-  const pointers = pointersSection?.values as Pointer[]
+const WhatYouWillLearn: React.FC<WhatYouWillLearnProps> = ({ sectionData }) => {
+  const pointers = sectionData?.values as Pointer[]
 
   if (!pointers || pointers.length === 0) {
     return null
@@ -20,7 +19,7 @@ const WhatYouWillLearn: React.FC<WhatYouWillLearnProps> = ({ courseData }) => {
         <div className="mb-6 md:mb-10 relative bg-[#E5E7EB] py-2 md:bg-white md:py-0">
           <div className="pt-6 pb-6 bg-white md:pb-0 md:pt-0">
             <div className="container">
-              <h2 className="mb-4 text-xl font-semibold md:text-2xl">{pointersSection?.name}</h2>
+              <h2 className="mb-4 text-xl font-semibold md:text-2xl">{sectionData?.name}</h2>
 
               <div className="rounded-md md:border">
                 <div className="pt-2 md:p-6">
