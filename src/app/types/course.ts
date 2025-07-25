@@ -3,6 +3,7 @@ import { ChecklistItem } from '@/app/types/checklist'
 import { CtaText } from '@/app/types/cta-text'
 import { Media } from '@/app/types/media'
 import { Section } from '@/app/types/section'
+import { SEOData } from '@/app/types/seo'
 
 // Old Info
 export interface OldInfo {
@@ -26,7 +27,7 @@ export interface CourseData {
   start_at: string
   media: Media[]
   checklist: ChecklistItem[]
-  seo: unknown[]
+  seo: SEOData
   cta_text: CtaText
   sections: Section[]
   is_cohort_based_course: boolean
