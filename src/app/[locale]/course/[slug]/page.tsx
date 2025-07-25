@@ -82,7 +82,7 @@ export default async function CoursePage({ params }: PageProps) {
       <div className="min-h-[90vh]">
         <CourseHero courseData={data} />
         <div className="flex sm:gap-24">
-          <div className="flex flex-col w-full sm:w-[54%] lg:w-[58%] xl:w-[70%] 2xl:w-[78%]">
+          <div className="flex flex-col w-full sm:w-[54%] lg:w-[58%] xl:w-[70%] 2xl:w-[78%] order-1 justify-center flex-1 md:order-1 md:max-w-[calc(100%_-_21.75rem)] lg:max-w-[calc(100%_-_28rem)]">
             <SectionsNav courseData={data} />
             {data?.sections?.map((section) => {
               switch (section?.type) {
@@ -101,7 +101,7 @@ export default async function CoursePage({ params }: PageProps) {
               }
             })}
           </div>
-          <div className="hidden sm:block sm:w-2/5 lg:w-1/5 xl:w-[30%] 2xl:w-[22%]"></div>
+          <div className="hidden sm:block w-full md:max-w-[20.625rem] lg:max-w-[25rem] order-2 bg-white absolute right-0 md:top-[3.125rem]"></div>
         </div>
       </div>
     </>

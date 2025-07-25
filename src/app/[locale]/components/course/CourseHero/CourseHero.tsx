@@ -1,12 +1,10 @@
 'use client'
 import CourseEnroll from '@/app/[locale]/components/course/CourseHero/CourseEnroll'
 import CourseFeatures from '@/app/[locale]/components/course/CourseHero/CourseFeatures'
-import CoursePrice from '@/app/[locale]/components/course/CourseHero/CoursePrice'
 import MediaPlayer from '@/app/[locale]/components/course/CourseHero/MediaPlayer'
 import ThumbnailGallery from '@/app/[locale]/components/course/CourseHero/ThumbnailGallery'
 import { CourseData } from '@/app/types'
 import { Phone, Star } from 'lucide-react'
-import Image from 'next/image'
 import React, { useState } from 'react'
 
 interface CourseHeroProps {
@@ -25,7 +23,7 @@ const CourseHero: React.FC<CourseHeroProps> = ({ courseData }) => {
       <div className="relative flex flex-col gap-4 container md:flex-row md:gap-12 min-h-[18.75rem] bg-cover bg-center bg-[url(/course-hero-bg.jpeg)]">
         <div className="relative flex flex-col gap-4 md:flex-row md:gap-12 pb-6 md:py-10 min-h-[18.75rem]">
           {/* Left Content Section */}
-          <div className="order-1 flex flex-col justify-center flex-1 md:order-1 md:max-w-[calc(100%_-_21.75rem)] lg:max-w-[calc(100%_-_28rem)]">
+          <div className="flex flex-col justify-center flex-1 md:order-1 md:max-w-[calc(100%_-_21.75rem)] lg:max-w-[calc(100%_-_28rem)]">
             {/* Mobile Media Player */}
             <div className="block mt-4 md:mt-0 md:hidden">
               <MediaPlayer
